@@ -1,0 +1,100 @@
+/* src/Pages/Product.css */
+.product {
+  padding: 80px 16px;
+  background: #fff;
+}
+.product-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-breadcrumb a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.product-grid {
+  display: grid;
+  gap: 20px;
+  align-items: start;
+  grid-template-columns: 1fr;
+  margin-top: 10px;
+}
+@media (min-width: 900px) {
+  .product-grid {
+    grid-template-columns: 1.1fr 1fr;
+  }
+}
+
+.product-media img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.product-title {
+  margin: 6px 0 10px;
+  font-size: clamp(24px, 5vw, 34px);
+  font-weight: 800;
+}
+.product-price {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.product-desc {
+  color: #333;
+  line-height: 1.7;
+}
+
+.product-actions {
+  display: flex;
+  gap: 10px;
+  margin: 16px 0;
+}
+.product-add {
+  height: 46px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(59, 127, 107, 0.25);
+  transition: transform 0.1s ease, background 0.2s;
+}
+.product-add:hover {
+  background: #356b5d;
+}
+.product-add:active {
+  transform: scale(0.98);
+}
+
+.product-secondary {
+  display: inline-grid;
+  place-items: center;
+  height: 46px;
+  padding: 0 16px;
+  border-radius: 10px;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.product-tags {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  background: rgba(59, 127, 107, 0.12);
+  color: var(--accent);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}

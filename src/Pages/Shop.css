@@ -1,0 +1,68 @@
+/* src/Pages/Shop.css */
+.shop {
+  padding: 80px 16px;
+  background: #fff;
+}
+.shop-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.shop-header {
+  display: grid;
+  gap: 12px;
+  align-items: end;
+  grid-template-columns: 1fr;
+  margin-bottom: 24px;
+}
+@media (min-width: 840px) {
+  .shop-header {
+    grid-template-columns: 1fr auto;
+  }
+}
+.shop-title {
+  margin: 0 0 6px;
+  font-size: clamp(26px, 5.5vw, 36px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text, #111);
+}
+.shop-sub {
+  margin: 0;
+  color: #666;
+  max-width: 60ch;
+  line-height: 1.6;
+}
+
+/* Controls */
+.shop-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.control {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  background: #fff;
+}
+.control span {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #111;
+}
+.control select {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-weight: 500;
+  color: var(--text, #111);
+  padding: 6px 2px;
+}
+
+/* Grid wrapper (cards styling comes from src/styles/Cards.css) */
+.shop-cards {
+  margin-top: 8px;
+}
