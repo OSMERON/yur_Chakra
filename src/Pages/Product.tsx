@@ -68,7 +68,8 @@ export default function Product() {
     );
   }
 
-  const imgSrc = product.image && product.image.length > 0 ? product.image : "/vite.svg";
+  const base = import.meta.env.BASE_URL || "/";
+  const imgSrc = product.image && product.image.length > 0 ? product.image : base + "vite.svg";
 
   return (
     <section className="product">
@@ -84,7 +85,7 @@ export default function Product() {
               alt={product.title}
               onError={(e) => {
                 const img = e.currentTarget as HTMLImageElement;
-                if (!img.src.endsWith("/vite.svg")) img.src = "/vite.svg";
+                if (!img.src.endsWith("vite.svg")) img.src = base + "vite.svg";
               }}
             />
           </div>

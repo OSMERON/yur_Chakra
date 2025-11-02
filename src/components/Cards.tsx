@@ -1,6 +1,7 @@
 import "../styles/Cards.css";
 import { memo, useEffect, useState, useRef } from "react";
 import { useCart } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 export type Item = {
   id: string;
@@ -14,10 +15,10 @@ type CardsProps = {
 };
 
 const defaultItems: Item[] = [
-  { id: "1", title: "Amethyst Balance Bracelet", price: 19.99, image: "/public/test.png" },
-  { id: "2", title: "Rose Quartz Calm Necklace", price: 24.5, image: "/public/test1.png" },
-  { id: "3", title: "Citrine Energy Ring", price: 14, image: "/public/test2.png" },
-  { id: "4", title: "Lapis Lazuli Focus Studs", price: 17.2, image: "/public/test3.png" },
+  { id: "1", title: "Amethyst Balance Bracelet", price: 19.99, image: import.meta.env.BASE_URL + "test.png" },
+  { id: "2", title: "Rose Quartz Calm Necklace", price: 24.5, image: import.meta.env.BASE_URL + "test1.png" },
+  { id: "3", title: "Citrine Energy Ring", price: 14, image: import.meta.env.BASE_URL + "test2.png" },
+  { id: "4", title: "Lapis Lazuli Focus Studs", price: 17.2, image: import.meta.env.BASE_URL + "test3.png" },
 ];
 
 /** 🛒 Animated Add-to-Cart button that also pushes to global cart */
@@ -98,9 +99,7 @@ function CardsBase({ items }: CardsProps) {
             <p className="card__price">£{item.price.toFixed(2)}</p>
 
             <CartButton item={item} />
-            <a className="card__btn1" href={`/shop?product=${encodeURIComponent(item.id)}`}>
-              View Product
-            </a>
+            <Link className="card__btn1" to={`/product/${encodeURIComponent(item.id)}`}> View Product </Link>
           </div>
         </article>
       ))}
