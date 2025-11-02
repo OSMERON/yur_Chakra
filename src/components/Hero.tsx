@@ -21,8 +21,7 @@ export default function Hero() {
             Shop Collection
             <IconChevronRight className="ml-8" />
           </a>
-          <a className="btn btn-solid" href="https://osmeron.github.io/yur_chakra/#/shop">Shop Collection</a>
-          <a className="btn btn-outline" href="https://osmeron.github.io/yur_chakra/#/meanings">Discover meanings </a>
+          <a className="btn btn-outline" href="https://osmeron.github.io/yur_chakra/meanings">Discover meanings </a>
         </div>
       </div>
     </section>
