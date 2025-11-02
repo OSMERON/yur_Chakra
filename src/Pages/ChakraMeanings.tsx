@@ -33,7 +33,7 @@ const CHAKRAS: Chakra[] = [
     color: "#E65100",
     description:
       "The Sacral Chakra, or Svadhisthana, is the second energy center located just below the navel. It governs creativity, pleasure, emotions, and relationships. Its color is orange and its element is water, symbolizing flow and adaptability. When balanced, you feel emotionally open, creative, and confident in your relationships. You enjoy life’s pleasures without guilt and express your feelings easily. When blocked, you may feel emotionally numb, lack motivation, or struggle with intimacy and passion. To strengthen it, engage in creative activities like art, music, or dance, spend time near water, and practice hip-opening yoga poses such as Pigeon or Bound Angle. Eating orange foods like oranges, mangoes, and carrots, and repeating affirmations like “I honor my emotions” or “I embrace joy” also support balance in this chakra.",
-    image: "/images/chakras/Sacral.jpeg",
+    image: "images/chakras/Sacral.jpeg",
     crystals: [
       { name: "Carnelian", slug: "carnelian" },
       { name: "Orange Calcite", slug: "orange-calcite" },
