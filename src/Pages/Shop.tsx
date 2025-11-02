@@ -53,7 +53,7 @@ function matchesCrystal(item: ShopItem, slug: string) {
   const aliases = CRYSTAL_ALIASES[slug];
   if (!aliases) return false;
   const hay = norm(
-    [item.title, (item as any).description, ((item as any).material || ""), ...(((item as any).tags || []) as string[])].filter(Boolean).join(" ")
+    [item.title, item.description, item.material, ...(item.tags || [])].filter(Boolean).join(" ")
   );
   return aliases.some((a) => hay.includes(norm(a)));
 }

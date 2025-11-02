@@ -30,9 +30,7 @@ function findByIdOrTitle(id?: string, titleQ?: string): ShopItem | undefined {
     const scored = SHOP_PRODUCTS
       .map((p) => {
         const hay = norm(
-          [p.title, (p as any).description, ...(((p as any).tags ?? []) as string[])]
-            .filter(Boolean)
-            .join(" ")
+          [p.title, p.description, ...(p.tags ?? [])].filter(Boolean).join(" ")
         );
         const idx = hay.indexOf(q);
         return { p, score: idx < 0 ? Number.POSITIVE_INFINITY : idx };
@@ -95,8 +93,8 @@ export default function Product() {
             <h1 className="product-title">{product.title}</h1>
             <p className="product-price">£{product.price.toFixed(2)}</p>
 
-            {(product as any).description && (
-              <p className="product-desc">{(product as any).description}</p>
+            {product.description && (
+              <p className="product-desc">{product.description}</p>
             )}
 
             <div className="product-actions">
@@ -106,9 +104,9 @@ export default function Product() {
               <Link to="/shop" className="product-secondary">Continue shopping</Link>
             </div>
 
-            {(product as any).tags?.length ? (
+            {product.tags?.length ? (
               <div className="product-tags">
-                {(product as any).tags.map((t: string) => (
+                {product.tags.map((t: string) => (
                   <Link key={t} to={`/shop?crystal=${encodeURIComponent(t)}`} className="tag">
                     #{t.replace(/-/g, " ")}
                   </Link>

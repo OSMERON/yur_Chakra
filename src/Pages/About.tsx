@@ -21,7 +21,7 @@ export default function About() {
   }, [location]);
 
   // Swap with your real image if needed
-  const founderImg = "/images/about/founder.jpg";
+  const founderImg = import.meta.env.BASE_URL + "images/about/founder.jpg";
 
   return (
     <section className="about">
@@ -99,7 +99,7 @@ export default function About() {
               title="Email"
             >
               <img
-                src="/images/socials/email.png"
+                src={import.meta.env.BASE_URL + "images/socials/email.png"}
                 alt=""
                 className="contact-icon-img"
               />
@@ -115,7 +115,7 @@ export default function About() {
               title="WhatsApp"
             >
               <img
-                src="/public/images/socials/Whatsapp.png"
+                src={import.meta.env.BASE_URL + "images/socials/Whatsapp.png"}
                 alt=""
                 className="contact-icon-img"
               />
@@ -131,7 +131,7 @@ export default function About() {
               title="Instagram"
             >
               <img
-                src="/images/socials/instagram.png"
+                src={import.meta.env.BASE_URL + "images/socials/instagram.png"}
                 alt=""
                 className="contact-icon-img"
               />

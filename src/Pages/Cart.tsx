@@ -19,8 +19,8 @@ function pickProductByStone(stone: string, excludeIds: Set<string>): ShopItem | 
   if (byTitle) return byTitle;
   const byTag = SHOP_PRODUCTS.find(p =>
     !excludeIds.has(String(p.id)) &&
-    Array.isArray((p as any).tags) &&
-    (p as any).tags.some((t: string) => normalize(t).includes(normalize(stone)))
+    Array.isArray(p.tags) &&
+    p.tags.some((t: string) => normalize(t).includes(normalize(stone)))
   );
   return byTag;
 }
@@ -33,7 +33,7 @@ export default function Cart() {
   const wantedStones = new Set<string>();
 
   for (const line of lines) {
-    const tags: string[] = Array.isArray((line.item as any)?.tags) ? (line.item as any).tags : [];
+    const tags: string[] = Array.isArray(line.item?.tags) ? line.item.tags : [];
     const stonesFromTitle = findStonesInTitle(line.title);
 
     const chakras = new Set<string>();

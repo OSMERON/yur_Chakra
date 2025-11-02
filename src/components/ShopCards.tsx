@@ -63,7 +63,9 @@ export default function ShopCards({ items, currency = "£", onAddToCart }: ShopC
                 onError={(e) => {
                   const img = e.currentTarget as HTMLImageElement;
                   if (!img.src.endsWith("/vite.svg")) {
-                    console.warn("Image not found, falling back:", img.src);
+                    if (import.meta.env.DEV) {
+                      console.warn("Image not found, falling back:", img.src);
+                    }
                     img.src = "/vite.svg";
                   }
                 }}
